@@ -65,7 +65,13 @@ class Application extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
           bodyMedium: GoogleFonts.montserrat(fontSize: 14),
+          bodySmall: GoogleFonts.montserrat(fontSize: 10),
           displaySmall: GoogleFonts.roboto(),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.grey[600])
+          ),
         ),
       ),
       initialRoute: '/',

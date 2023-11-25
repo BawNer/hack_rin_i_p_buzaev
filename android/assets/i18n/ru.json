@@ -11,5 +11,12 @@
   "normal": "Средне",
   "awfully": "Ужасно",
   "bank_info": "Информация",
-  "bank_last_request": "Ваши заявки"
+  "bank_last_request": "Ваши заявки",
+  "order": "Заявка",
+  "create_order": "Создать заявку",
+  "last_update": "Обновлено",
+  "amount": "Сумма",
+  "period": "Период",
+  "months": "месяцев",
+  "payment_per_month": "Ежемесячный платеж"
 }
