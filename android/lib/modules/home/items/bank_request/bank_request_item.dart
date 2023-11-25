@@ -89,10 +89,12 @@ class BankRequestItem extends StatelessWidget {
                 '${tr("payment_per_month")}: ${NumberFormat.simpleCurrency(name: pureCurrencyName, decimalDigits: 2).format(paymentPerMonth)}'),
           ],
         ),
-        trailing: GestureDetector(
-          onTap: () {},
-          child: const Icon(Icons.refresh),
-        ),
+        trailing: status == 'ACCEPTED' || status == 'DECLINE'
+            ? null
+            : GestureDetector(
+                onTap: () {},
+                child: const Icon(Icons.refresh),
+              ),
       ),
     );
   }

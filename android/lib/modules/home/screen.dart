@@ -198,13 +198,20 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                               ),
                             ],
                           ),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                                foregroundColor: MaterialStateProperty.all(Colors.white),
+                              ),
+                              child: Text(tr("create_order"))
+                          ),
 
                           // listview of last request
 
                           const SizedBox(
-                            height: 15,
+                            height: 5,
                           ),
-
                           Expanded(child: buildBankRequestItems()),
                         ],
                       ),
