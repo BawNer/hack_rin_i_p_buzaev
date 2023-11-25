@@ -1,1 +1,0 @@
-SECRET_KEY = 'nsjkdlvfm98123jnl%!^sd0-1-l1-0cjwkmc=1!@'
