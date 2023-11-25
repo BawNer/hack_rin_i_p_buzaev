@@ -1,4 +1,7 @@
 /android/.dart_tool
 /android/.idea
 /android/build
+/android/.gradle
 
+.idea
+.vscode
