@@ -2,7 +2,7 @@ import json
 import requests
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
-from case.models import Users, History
+from .models import Users, History
 import xml.etree.ElementTree as ET
 from random import randint, uniform
 from time import sleep
@@ -149,11 +149,3 @@ def monthly_balance():
 
 def num_credit_inquiries():
     return randint(1, 5)
-
-
-def status():
-    return 1
-
-
-def credit_score():
-    return 1
