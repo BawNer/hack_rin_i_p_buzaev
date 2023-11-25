@@ -4,3 +4,7 @@
 /rest/.idea
 /rest/templates
 /rest/venv
+/android/.gradle
+
+.idea
+.vscode
