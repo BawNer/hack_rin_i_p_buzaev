@@ -1,4 +1,6 @@
 /android/.dart_tool
 /android/.idea
 /android/build
-
+/rest/.idea
+/rest/templates
+/rest/venv
