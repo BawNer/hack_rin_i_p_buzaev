@@ -2,3 +2,5 @@
 /android/.idea
 /android/build
 
+.idea
+.vscode
