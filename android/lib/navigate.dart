@@ -1,4 +1,5 @@
 import 'package:centr_invest_app/modules/auth/screen.dart';
+import 'package:centr_invest_app/modules/create_order/screen.dart';
 import 'package:centr_invest_app/modules/home/screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,5 +14,9 @@ class Navigate {
 
   static openHomeScreen(BuildContext context) {
     openScreen(context, const HomeScreen());
+  }
+
+  static openCreateOrderScreen(BuildContext context) {
+    openScreen(context, const CreateOrderScreen());
   }
 }

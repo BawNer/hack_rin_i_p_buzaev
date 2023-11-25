@@ -2,10 +2,11 @@ import 'package:centr_invest_app/core/ui/card_story.dart';
 import 'package:centr_invest_app/core/ui/padding.dart';
 import 'package:centr_invest_app/modules/home/contract.dart';
 import 'package:centr_invest_app/modules/home/items/bank_request/bank_request_item.dart';
-import 'package:centr_invest_app/core/ui/emotion_face.dart';
 import 'package:centr_invest_app/modules/home/presenter.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../navigate.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                             children: <Widget>[
                               FittedBox(
                                 child: Text(
-                                  "АКЦИЯ! \n\n \nпервое место\nИ.П. Бузаев",
+                                  "Команда\nИ.П. Бузаев\nзаняла\nпервое место!\nРасскажем\nкак это было",
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyLarge!
@@ -169,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                       topLeft: Radius.circular(50),
                       topRight: Radius.circular(50)),
                   child: Container(
-                    color: Colors.grey[50],
+                    color: Colors.grey[100],
                     child: Padding(
                       padding: insets(horizontal: 15, vertical: 25),
                       child: Column(
@@ -199,7 +200,9 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                             ],
                           ),
                           ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigate.openCreateOrderScreen(context);
+                              },
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
                                 foregroundColor: MaterialStateProperty.all(Colors.white),
