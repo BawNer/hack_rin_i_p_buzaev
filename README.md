@@ -57,7 +57,7 @@ coming soon
 
 РАЗРАБОТЧИКИ
 
-<h4>Красников Александр fullstack, team lead https://t.me/@gfde4lt </h4>
+<h4>Красников Александр fullstack, team lead https://t.me/gfde4lt </h4>
 <h4>Джанкуланов Артур python https://t.me/padomart </h4>
 <h4>Бузаев Алексей python https://t.me/https://t.me/dieZzz_01</h4>
 
