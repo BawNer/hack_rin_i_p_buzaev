@@ -1,9 +1,12 @@
 import keras as k
 import pandas as pd
 import numpy as np
+import h5py
 
 data_frame = pd.read_csv('credit_score_ds.csv', sep='|')
 
+
+# enumeration of input data
 input_names = [
     'age',
     'annual_income', 'monthly_inhand_salary',
@@ -18,6 +21,8 @@ output_names = ['credit_score']
 raw_input_data = input_names
 raw_output_data = output_names
 
+
+# finding maximum values for convenience during normalization
 max_age = 100
 max_annual_income = data_frame['annual_income'].max()
 max_monthly_inhand_salary = data_frame['monthly_inhand_salary'].max()
@@ -30,6 +35,7 @@ max_amount_invested_monthly = data_frame['amount_invested_monthly'].max()
 max_monthly_balance = data_frame['monthly_balance'].max()
 
 
+# normalization of data
 encoders = {
     'age': lambda age: [age/max_age],
     'annual_income': lambda annual_income: [annual_income/max_annual_income],
@@ -52,7 +58,7 @@ encoders = {
     'credit_score': lambda s_value: [s_value]
 }
 
-
+# data_frame to scv
 def dataframe_to_dict(df):
     result = dict()
     for column in df.columns:
@@ -61,6 +67,7 @@ def dataframe_to_dict(df):
     return result
 
 
+# separation of input and output data
 def make_supervised(df):
     raw_input_data = data_frame[input_names]
     raw_output_data = data_frame[output_names]
@@ -68,6 +75,7 @@ def make_supervised(df):
             'outputs': dataframe_to_dict(raw_output_data)}
 
 
+# encoding of input and output data
 def encode(data):
     vectors = []
     for data_name, data_values in data.items():
@@ -86,15 +94,17 @@ supervised = make_supervised(data_frame)
 encoded_inputs = np.array(encode(supervised['inputs']))
 encoded_outputs = np.array(encode(supervised['outputs']))
 
-train_x = encoded_inputs[:20000]
-train_y = encoded_outputs[:20000]
+train_x = encoded_inputs[:70000]
+train_y = encoded_outputs[:70000]
 
-test_x = encoded_inputs[20000:]
+test_x = encoded_inputs[70000:]
 
 
 try:
     model = k.models.load_model('model_train.h5')
 except (OSError, IOError):
+
+    # neural network training model
     model = k.Sequential()
     model.add(k.layers.Dense(units=256, activation='relu'))
     model.add(k.layers.Dense(units=128, activation='relu'))
@@ -103,13 +113,14 @@ except (OSError, IOError):
     model.add(k.layers.Dense(units=1, activation='sigmoid'))
 
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-    fit_results = model.fit(x=train_x, y=train_y, epochs=200, validation_split=0.2)
+    fit_results = model.fit(x=train_x, y=train_y, epochs=100, validation_split=0.2)
 
     model.save('model_train.h5')
 
-predicted_test = model.predict(test_x)
+predictions = model.predict(test_x)
 
-real_data = data_frame.iloc[20000:][input_names+output_names]
-real_data['predicted_score'] = predicted_test
+print(predictions)
 
-
+# recording predictions in a separate file
+with h5py.File('model_test.h5', 'w') as hf:
+    hf.create_dataset('model_test', data=predictions)
