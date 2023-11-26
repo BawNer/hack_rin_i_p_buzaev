@@ -20,21 +20,21 @@ def registration(request):
     if data.get('login') not in all_logins:
         password = encrypt(data.get('password'))
         user = Users(
-            # name=data.get('name'),
-            # surname=data.get('surname'),
-            # lastname=data.get('lastname'),
-            # occupation=data.get('occupation'),
+            name="Иван",
+            surname="Иванович",
+            lastname="Иванов",
+            occupation="Врач",
             login=data.get('login'),
-            # age=data.get('age'),
-            # annual_income=data.get('annual_income'),
-            # monthly_inhand_salary=data.get('monthly_inhand_salary'),
-            # num_bank_accounts=data.get('num_bank_accounts'),
-            # num_credit_card=data.get('num_credit_card'),
-            # num_of_loan=data.get('num_of_loan'),
+            age=34,
+            annual_income=34,
+            monthly_inhand_salary=534,
+            num_bank_accounts=3,
+            num_credit_card=1,
+            num_of_loan=3,
             num_credit_inquiries=num_credit_inquiries(),
-            # credit_history_age=data.get('credit_history_age'),
-            # amount_invested_monthly=data.get('amount_invested_monthly'),
-            # payment_behaviour=None,
+            credit_history_age=10,
+            amount_invested_monthly=12000,
+            payment_behaviour="High_spent_Small_value_payments",
             monthly_balance=monthly_balance(),
             password=password,
 
@@ -72,7 +72,7 @@ def currency(request):
         for valute in root.findall('Valute'):
             curency = valute.find('CharCode').text
             if curency in constants.CURRS:
-                value = valute.find('Value').text
+                value = valute.find('VunitRate').text
                 name = valute.find('Name').text
                 course.append({
                     'currency': curency,
@@ -125,7 +125,6 @@ def loan_index_application(request, index):  # Возвращение конкр
     if request.headers.get('Token'):
         data = decode_token(request.headers.get('Token'))
         first_object = serializer.data[0].get("user")
-        print(data.get('user_id'))
         if data.get('user_id') == first_object:
             return JsonResponse({'success': 'true', 'history': serializer.data}, safe=False)
     return JsonResponse({'success': 'false', 'error': 'Invalid Token'})
