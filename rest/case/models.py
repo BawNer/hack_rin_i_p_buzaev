@@ -26,7 +26,7 @@ class Users(models.Model):
 
 class History(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(Users, on_delete=models.PROTECT)
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
     status = models.CharField()
     created_at = models.DateTimeField(editable=False, auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
