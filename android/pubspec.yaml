@@ -73,6 +73,7 @@ dependencies:
   ndef: ^0.3.3
 
   google_fonts: ^6.1.0
+#  video_player: ^2.8.1
 
 dev_dependencies:
   flutter_test:
@@ -106,6 +107,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/i18n/
+    - assets/img/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

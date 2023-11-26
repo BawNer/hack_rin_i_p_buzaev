@@ -14,5 +14,6 @@ class HomePresenter {
 
   Future<void> getUser() async {
     user = await Injector().user.user;
+    _view.render();
   }
 }

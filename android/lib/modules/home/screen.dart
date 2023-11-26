@@ -42,8 +42,18 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Column(
+                        Row(
                           children: <Widget>[
+                            GestureDetector(
+                              onTap: () {
+                                Navigate.openUserScreen(context);
+                              },
+                              child: const Icon(
+                                Icons.account_circle,
+                                size: 35,
+                                color: Colors.white70,
+                              ),
+                            ),
                             Text(
                               _presenter.user?.name ?? 'no name provided',
                               style: Theme.of(context)
@@ -53,15 +63,18 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                             ),
                           ],
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white30,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          padding: insets(all: 5),
-                          child: const Icon(
-                            Icons.notifications,
-                            color: Colors.white,
+                        GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white30,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: insets(all: 5),
+                            child: const Icon(
+                              Icons.notifications,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ],
@@ -204,11 +217,12 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                                 Navigate.openCreateOrderScreen(context);
                               },
                               style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
-                                foregroundColor: MaterialStateProperty.all(Colors.white),
+                                backgroundColor: MaterialStateProperty.all(
+                                    Theme.of(context).primaryColor),
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.white),
                               ),
-                              child: Text(tr("create_order"))
-                          ),
+                              child: Text(tr("create_order"))),
 
                           // listview of last request
 
@@ -277,15 +291,8 @@ class _HomeScreenState extends State<HomeScreen> implements HomeContract {
                 const SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                    backgroundColor: MaterialStateProperty.all(
-                        Theme.of(context).primaryColor),
-                  ),
-                  onPressed: () {},
-                  child: Text(tr("create_order")),
-                ),
+                Text('Статус заявки'),
+                Text('Сумма кредита')
               ],
             ),
           ),

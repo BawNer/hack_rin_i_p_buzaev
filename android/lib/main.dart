@@ -114,14 +114,16 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.center,
-              child: Text(tr('loading')),
+              child: Image(
+                image: AssetImage('assets/img/load_logo.png'),
+              ),
             )
           ],
         ),

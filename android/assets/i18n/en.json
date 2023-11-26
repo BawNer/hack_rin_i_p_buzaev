@@ -1,0 +1,18 @@
+{
+  "loading": "Loading...",
+  "auth": "Authorization",
+  "login": "Login",
+  "password": "Password",
+  "next": "Next",
+  "notEmpty": "Filed required!",
+  "bank_info": "Info",
+  "bank_last_request": "Your requests",
+  "order": "Request",
+  "create_order": "New request",
+  "last_update": "Updated at",
+  "amount": "Amount",
+  "period": "Range",
+  "months": "months",
+  "credit_period": "Credit range",
+  "payment_per_month": "Payment per month"
+}

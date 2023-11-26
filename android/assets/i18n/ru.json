@@ -13,5 +13,6 @@
   "amount": "Сумма",
   "period": "Период",
   "months": "месяцев",
+  "credit_period": "Срок кредитования",
   "payment_per_month": "Ежемесячный платеж"
 }
