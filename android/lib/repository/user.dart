@@ -28,8 +28,8 @@ class UserRepository {
   Future<UserModel> login(String login, String password) async {
     Uri auth = Uri(
       scheme: const String.fromEnvironment("SCHEME", defaultValue: 'http'),
-      host: const String.fromEnvironment("AUTH", defaultValue: 'localhost'),
-      path: "/login"
+      host: const String.fromEnvironment("AUTH", defaultValue: '127.0.0.1'),
+      path: "/login/"
     );
 
     // make request here
