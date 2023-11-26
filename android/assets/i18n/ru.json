@@ -5,11 +5,14 @@
   "password": "Пароль",
   "next": "Далее",
   "notEmpty": "Поле не должно быть пустым",
-  "currentEmotion": "Какое у Вас настроение?",
-  "excellent": "Отлично",
-  "fine": "Хорошо",
-  "normal": "Средне",
-  "awfully": "Ужасно",
   "bank_info": "Информация",
-  "bank_last_request": "Ваши заявки"
+  "bank_last_request": "Ваши заявки",
+  "order": "Заявка",
+  "create_order": "Новая заявка",
+  "last_update": "Обновлено",
+  "amount": "Сумма",
+  "period": "Период",
+  "months": "месяцев",
+  "credit_period": "Срок кредитования",
+  "payment_per_month": "Ежемесячный платеж"
 }

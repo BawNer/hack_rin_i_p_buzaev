@@ -65,7 +65,13 @@ class Application extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
           bodyMedium: GoogleFonts.montserrat(fontSize: 14),
+          bodySmall: GoogleFonts.montserrat(fontSize: 10),
           displaySmall: GoogleFonts.roboto(),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.grey[600])
+          ),
         ),
       ),
       initialRoute: '/',
@@ -108,14 +114,16 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.center,
-              child: Text(tr('loading')),
+              child: Image(
+                image: AssetImage('assets/img/load_logo.png'),
+              ),
             )
           ],
         ),

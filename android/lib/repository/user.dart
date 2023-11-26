@@ -45,4 +45,8 @@ class UserRepository {
         surname: 'surname'
     );
   }
+
+  Future<void> logout() async {
+    (await _container).delete('user');
+  }
 }

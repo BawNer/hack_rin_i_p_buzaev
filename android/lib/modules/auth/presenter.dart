@@ -1,5 +1,4 @@
 import 'package:centr_invest_app/injector.dart';
-import 'package:centr_invest_app/models/user.dart';
 import 'package:centr_invest_app/modules/auth/contract.dart';
 
 class AuthPresenter {
