@@ -72,7 +72,7 @@ def currency(request):
         for valute in root.findall('Valute'):
             curency = valute.find('CharCode').text
             if curency in constants.CURRS:
-                value = valute.find('Value').text
+                value = valute.find('VunitRate').text
                 name = valute.find('Name').text
                 course.append({
                     'currency': curency,
