@@ -13,6 +13,7 @@
 <h4>Основной стек технологий:</h4>
 <ul>
   <li>Dart, Flutter, Python.</li>
+	<li>Django, Django REST framework.</li>
 	<li>Keras.</li>
 	<li>PostgreSQL.</li>
 	<li>Git</li>
